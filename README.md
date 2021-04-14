@@ -17,39 +17,45 @@ companies is in exponential order, a proper study has to be done in order to inc
 
 
 ## Methodology
-•	Data Collection
-The data has been made publicly available by the Central Pollution Control Board: https://cpcb.nic.in/ which is the official portal of Government of India.
+###	Data Collection: 
+* The data has been made publicly available by the Central Pollution Control Board: https://cpcb.nic.in/ which is the official portal of Government of India.
 
-•	Data Understanding
+•	Data Understanding: 
 The dataset contains air quality data and AQI (Air Quality Index) at hourly and daily level of various stations across multiple cities in India. We are focusing on monthly data of cities for forecasting the AQI on all over India. It contains different types of pollutants like PM2.5, PM10, NO, CO, Benzene, Toluene, and Xylene etc.
 
-•	Data Cleaning
-The dataset having missing values presents in all variable except City and Date time. Below heatmap shows missing values in variables.
- ![image](https://user-images.githubusercontent.com/78426725/114752971-8cdd1b80-9d74-11eb-97b1-6c4e9378c5ac.png)
-
-
+•	Data Cleaning: 
+The missing values are present in all variables in the dataset except City and Date time. Below heatmap shows missing values in variables.
  
 
 
+![image](https://user-images.githubusercontent.com/78426725/114754272-045f7a80-9d76-11eb-936b-d260df5d7a40.png)
 
-We have to impute these missing values in data. As per the data description, missing values impute by city and date time. First it imputed by daily average, then monthly average and remaining by backward and forward fill. After this, check the distribution, it shows after imputing missing values, it’s not much changed.
+
+
+
+I imputed the missing values in the data by the following methods : First the data was segregated according to city and datetime. Then I imputed 5 day average, then monthly average and remaining missing values were filled by backward and forward fill. The distribution of variables after imputing missing values was not much changed.
  
-•	Univariate Analysis
+•	Univariate Analysis: 
 
-All the variables in dataset are numerical variables. So, first check the distribution of all the variables and skewness of the data.
+All the variables in dataset are numerical variables. So, I checked the distribution of all the variables and skewness of the data.
+
+
 
 ![image](https://user-images.githubusercontent.com/78426725/114753021-a1211880-9d74-11eb-841f-d2299735341c.png)
 
 
 
 
-•	From the plot, can say that most of the variables are skewed. All the variables are right skewed. Skewness of the Benzene, Toluene and CO is on higher side than other variables.
+From the plot, we can say that all the variables are right skewed. Skewness of the Benzene, Toluene and CO is on higher side than other variables.
  
 
-•	Multivariate Analysis
+•	Multivariate Analysis:
 
-For multivariate analysis, plot graphs of all variables with AQI variable. It shows that the PM2.5, PM10, NO2 and CO are positive correlated with AQI, means these three are increases AQI also increase. It also visualizes by heatmap shown below.
-It shows that the PM2.5, PM10, NO2 and CO are having strong positive correlation, which means, higher these three AQI also higher. All other variables are also positive correlated with AQI but the correlation between them is weak, which means they are create less impact on AQI.
+For multivariate analysis, we plotted the graphs to check the impact of all variables with AQI. It shows that the PM2.5, PM10, NO2 and CO are positively correlated with AQI. It is visualized by heatmap shown below.
+It shows that the PM2.5, PM10, NO2 and CO are having strong positive correlation. All other variables are also positively correlated with AQI but the correlation between them is weak, which means they have less impact on AQI.
+
+
+
 
 
 ![image](https://user-images.githubusercontent.com/78426725/114753060-ada57100-9d74-11eb-9876-51a26225ac38.png)
@@ -73,11 +79,22 @@ It shows that the PM2.5, PM10, NO2 and CO are having strong positive correlation
 Also I checked for the city wise average AQI, which plot is shown in below.
 
 •	It shows that, Ahmedabad city have a higher average of AQI in last five years. And Aizawl have very low average of AQI, may be the reason for these is mountainous area.
+
+
 ![image](https://user-images.githubusercontent.com/78426725/114753287-ea716800-9d74-11eb-9e3d-8446c433fd68.png)
+
+
+
 
 •	City wise representation of AQI on map of India
 
+
+
+
 ![image](https://user-images.githubusercontent.com/78426725/114753317-f5c49380-9d74-11eb-81f4-7ad1a061f57d.png)
+
+
+
 
 •	According to the map we can see the top 5 cities with the highest AQI and top 5 cities with the lowest AQI
 •	Cities with the highest AQI are represented by the red marker and the cities with the lowest AQI are represented by the green marker. We can infer that places towards the north region have high AQI whereas the AQI falls as we come down south.
@@ -87,6 +104,10 @@ Also I checked for the city wise average AQI, which plot is shown in below.
 •	Time Series Visualization
 
 For visualize the time series data, first check the year and month wise visualization which shown in below.
+
+
+
+
 ![image](https://user-images.githubusercontent.com/78426725/114753369-04ab4600-9d75-11eb-9c1c-2cae45aa0f32.png)
 
  
@@ -97,7 +118,13 @@ From the above graph, can see that the AQI is decreases after January 2020, this
 
 Also check the visualization by hour considering all over India.
 
+
+
+
+
 ![image](https://user-images.githubusercontent.com/78426725/114753416-0f65db00-9d75-11eb-9791-1179dd13bebd.png)
+
+
 
  
 From the plot of pollutants hour wise, can say that the AQI and all other pollutants are having low average during night and higher at mid of the day.
@@ -119,8 +146,12 @@ We can also visualize our data using a method called time-series decomposition t
 
 The below graph gives us Observed values in the data. Next three graphs are Trend, Seasonality and Residuals. By looking at the trend in the data, we can see that the trend is decreasing gradually year by year and there is sudden decrease after 2019.  The seasonal graph shows the cyclic changes in the data. The data points which doesn’t follow trend as well as seasonality, are plotted in the residual graph.
  
+ 
+ 
 
  ![image](https://user-images.githubusercontent.com/78426725/114753572-3a502f00-9d75-11eb-9e46-7ff6c46ea8ce.png)
+
+
 
 
 
@@ -133,7 +164,11 @@ Here we choose ARIMA model for building a base model. We are taking order (p,d,q
 After the auto ARIMA we used the order (3,0,2) and we add the seasonality order to build the SARIMAX model. SARIMAX model is the same as an ARIMA model but it also takes into account the seasonality factor. Seasonality is the presence of variations that occur at specific regular intervals less than a year. Seasonality may be caused by weather and consists of periodic, repetitive, and generally regular and predictable patterns in the levels of a time series.
  
 
+
+
  ![image](https://user-images.githubusercontent.com/78426725/114753600-42a86a00-9d75-11eb-8bb1-1b94dbea897e.png)
+
+
 
 
 From the above graph we have observed and forecasted value. The predicted value of 2020 is very high on the basis of previous data. But the actual value of AQI seems less the reason for decrease might be pandemic.
@@ -152,8 +187,12 @@ SARIMAX model is the same as an ARIMA model but it also takes into account the s
 
 With the output of SARIMAX and ARIMA model we forecast the AQI value for year 2020/21. From the observed value we can see that the forecasted value of 2020 was very high and actual value is pretty low. The reason behind this might be the covid pandemic.
  
-![Uploading image.png…]()
+ 
+ 
+ 
+![image](https://user-images.githubusercontent.com/78426725/114754652-71731000-9d76-11eb-817b-53fbe2b55e09.png)
 
+ 
  
 
 
