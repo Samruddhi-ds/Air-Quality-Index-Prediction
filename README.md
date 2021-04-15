@@ -112,7 +112,7 @@ As India is developing economy from Industrialization perspective. Development m
  
 
 
-* We can see that the AQI is decreases after January 2020, this might be because of the COVID Pandemic. Industries were completly closed; Transport was halted for 5-6 months. So due to that we can see the Decline in AQI During 2020.
+* We can see that the AQI has decreased after January 2020, this might be because of the COVID Pandemic. Industries were completly closed; Transport was halted for 5-6 months. So due to that we can see the Decline in AQI During 2020.
 
 
 #### Hourly visualisation of AQI 
