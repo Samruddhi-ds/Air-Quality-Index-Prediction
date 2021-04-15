@@ -137,8 +137,8 @@ As India is developing economy from Industrialization perspective. Development m
 
 * Stationarity is an important concept in time series analysis. Stationarity means that the statistical properties of a time series do not change over time. Stationarity is important because many useful analytical tools and statistical tests and models rely on it.
 * I checked for stationarity with adfuller (Dickey Fuller) test for AQI. The Hypothesis was aa follows.
-* $H_0$: Data is not stationary
-* $H_1$: Data is Stationary
+* Ho: Data is not stationary
+* H1: Data is Stationary
 * I could infer from the test that the pvalue is < 0.05, hence we reject the H0. This means that data is stationary.
 
 ### Time Series Decomposition
@@ -194,8 +194,7 @@ As India is developing economy from Industrialization perspective. Development m
 
 ## Week wise Univariate Analysis with AQI
 * In week wise analysis, first I have built the auto ARIMA model and find the best order. By using this order SARIMAX model was built.
-
-With the output of SARIMAX and ARIMA model I forecasted the AQI value for year 2020/21 same as monthly analysis.
+* With the output of SARIMAX and ARIMA model I forecasted the AQI value for year 2020/21 same as monthly analysis.
  
  
  
@@ -206,12 +205,11 @@ With the output of SARIMAX and ARIMA model I forecasted the AQI value for year 2
  
 
 
-From the above graph we have observed and forecasted value. And forecasted the value of AQI for 2021.
-
+* From the above graph we have observed and forecasted value. And forecasted the value of AQI for 2021.
 
 ##	Week Wise Multivariate analysis with VAR
 
-Same as Monthly analysis, VAR was built for Weekly data. there was not much difference in RMSE and MAPE values.
+* Same as Monthly analysis, VAR was built for Weekly data. there was not much difference in RMSE and MAPE values.
 
 ## Comparative analysis
 
@@ -249,7 +247,7 @@ Model_Name                       	RMSE	               MAPE
 
 
 ## Other References:
-1.	Anand Kumar, Dr. Ashish Grag and Prof. Upender Pandel, 2011, A Study of Ambient Air Quality Status in Jaipur City (Rajasthan, India), Using Air Quality Index, Nature and Science, 9(6), 38 – 43.
-2.	Sarella G and Khambete A K 2015. Ambient Air Quality Analysis using Air Quality Index
+*	Anand Kumar, Dr. Ashish Grag and Prof. Upender Pandel, 2011, A Study of Ambient Air Quality Status in Jaipur City (Rajasthan, India), Using Air Quality Index, Nature and Science, 9(6), 38 – 43.
+*	Sarella G and Khambete A K 2015. Ambient Air Quality Analysis using Air Quality Index
 – A. Case Study of Vapi. International Journal for Innovation Research in Science & Technology. 1(10)
            
