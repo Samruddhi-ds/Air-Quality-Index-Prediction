@@ -213,11 +213,10 @@ As India is developing economy from Industrialization perspective. Development m
 
 ## Comparative analysis
 
-Model_Name                       	RMSE	               MAPE
-0	SARIMAX Month wise	          45.747235          	39.102799
-1	VAR MONTH Wise	              62.862111	          55.323994
-2	SARIMAX Week Wise	           20.914404	          15.322581
-3	VAR week Wise	               61.936899	          52.768557
+
+![image](https://user-images.githubusercontent.com/78426725/114858792-8cda2b80-9e07-11eb-8bce-cd9b614fa5bf.png)
+
+
 
 * We can see that the RMSE and MAPE values of SARIMAX model are less than the VAR model. 
 * It means SARIMAX model is performing best in forecasting AQI values.
